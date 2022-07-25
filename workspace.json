@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "sidecar": "apps/sidecar",
+    "sidecar-e2e": "apps/sidecar-e2e"
+  }
+}
