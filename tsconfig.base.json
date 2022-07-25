@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@webtv/firebase": ["libs/firebase/src/index.ts"],
+      "@webtv/trivia": ["libs/config/src/index.ts"],
       "@webtv/views": ["libs/views/src/index.ts"]
     }
   },
