@@ -12,7 +12,7 @@
             "type": "string"
         },
         "answer": {
-            "type": "string" 
+            "type": ["string", "array", "boolean"] 
         }
     },
     "required": ["triviaId", "question", "answer"]
