@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "firebase": "libs/firebase",
-    "sidecar": "apps/sidecar"
+    "sidecar": "apps/sidecar",
+    "views": "libs/views"
   }
 }

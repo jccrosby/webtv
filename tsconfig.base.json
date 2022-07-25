@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@webtv/firebase": ["libs/firebase/src/index.ts"]
+      "@webtv/firebase": ["libs/firebase/src/index.ts"],
+      "@webtv/views": ["libs/views/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
