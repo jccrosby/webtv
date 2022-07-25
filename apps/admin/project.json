@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/sidecar",
+  "sourceRoot": "apps/admin",
   "projectType": "application",
   "tags": []
 }
