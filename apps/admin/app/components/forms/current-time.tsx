@@ -13,7 +13,7 @@ const CurrentTimeForm: FC<CurrentTimeFormProps> = ({ addGameBookmark }) => {
     const [currentTime, setCurrentTime] = useState(0);
     return (
         <StyledForm>
-            <h1>Current Time</h1>
+            <h3>Current Time</h3>
             <StyledLabel htmlFor="gamePk">
                 gamePk:{' '}
                 <input
@@ -36,7 +36,10 @@ const CurrentTimeForm: FC<CurrentTimeFormProps> = ({ addGameBookmark }) => {
                     name="currentTime"
                     type="number"
                     defaultValue={currentTime}
-                    onChange={(event) => setCurrentTime(parseFloat(event?.target.value))}></input>
+                    onChange={(event) => {
+                        const currentTime = parseFloat(event?.target.value);
+                        setCurrentTime(isNaN(currentTime) ? 0 : currentTime);
+                    }}></input>
             </StyledLabel>
             <button
                 onClick={(event) => {

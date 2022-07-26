@@ -6,10 +6,12 @@ import {
     Firestore,
     getDoc,
     getDocs,
+    onSnapshot,
     query,
     setDoc,
     updateDoc,
 } from 'firebase/firestore';
+import { SnapshotUpdateHandler } from './use-firebase';
 
 export interface GameContentBookmark {
     [key: string]: number;
@@ -37,7 +39,7 @@ const useBookmarkCollection = (db: Firestore, collectionPath = 'bookmarks') => {
     return collection(db, collectionPath);
 };
 
-const useBookmarkDocRef = (db: Firestore, userId: string, collectionPath = 'bookmarks') => {
+const getBookmarkDocRef = (db: Firestore, userId: string, collectionPath = 'bookmarks') => {
     return doc(db, `${collectionPath}/${userId}`);
 };
 
@@ -57,7 +59,7 @@ const getSvodBookmark = async (db: Firestore, userId: string, slug: string) => {
 };
 
 const getUserBookmarks = async (db: Firestore, userId: string) => {
-    const docRef = useBookmarkDocRef(db, userId);
+    const docRef = getBookmarkDocRef(db, userId);
     try {
         const bookmarksSnapshot = await getDoc(docRef);
         const bookmarks = bookmarksSnapshot.data() as Bookmarks;
@@ -80,24 +82,36 @@ const addGameBookmarkForUser = async (
     gamePk: string,
     contentBookmark: GameContentBookmark,
 ) => {
-    return await setDoc(doc(db, `bookmarks/${userId}/games/${gamePk}`), contentBookmark, {
+    return await setDoc(doc(db, `bookmarks/games/${gamePk}`), contentBookmark, {
         merge: true,
     });
 };
 
 const deleteGameBookmarkForUser = async (db: Firestore, userId: string, gamePk: string) => {
-    const docRef = doc(db, `bookmarks/${userId}`);
+    const docRef = doc(db, `bookmarks`);
     return await updateDoc(docRef, { [`games.${gamePk}`]: deleteField() });
 };
 
 const deleteVodBookmarkForUser = async (db: Firestore, userId: string, slug: string) => {
-    const docRef = doc(db, `bookmarks/${userId}`);
+    const docRef = doc(db, `bookmarks`);
     return await updateDoc(docRef, { [`vod.${slug}`]: deleteField() });
 };
 
 const deleteSvodBookmarkForUser = async (db: Firestore, userId: string, slug: string) => {
-    const docRef = doc(db, `bookmarks/${userId}`);
+    const docRef = doc(db, `bookmarks`);
     return await updateDoc(docRef, { [`svod.${slug}`]: deleteField() });
+};
+
+export const onBookmarkSnapshotUpdate = (
+    db: Firestore,
+    docPath: string,
+    snapshotUpdateHandler: SnapshotUpdateHandler,
+) => {
+    const eventsDocRef = getBookmarkDocRef(db, docPath);
+    const unsubscribe = onSnapshot(eventsDocRef, (doc) => {
+        snapshotUpdateHandler(doc);
+    });
+    return unsubscribe;
 };
 
 export const useBookmarks = (db: Firestore, userId: string) => {

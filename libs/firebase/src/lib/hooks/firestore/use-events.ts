@@ -13,21 +13,20 @@ import {
     updateDoc,
     where,
 } from 'firebase/firestore';
-
-// type SnapshotHandler = (doc: any) => void;
+import { SnapshotUpdateHandler } from './use-firebase';
 
 const useEventsCollection = (db: Firestore, userId: string, collectionPath = 'events') => {
     return collection(db, `events/${userId}/${collectionPath}`);
 };
 
-const useEventDocRef = (db: Firestore, userId: string, collectionPath = 'events') => {
+const getEventDocRef = (db: Firestore, userId: string, collectionPath = 'events') => {
     return doc(db, `${collectionPath}/${userId}`);
 };
 
 const sendEvent = async (db: Firestore, userId: string, eventType: string, eventData: any) => {
     eventData.type = eventType;
     eventData.dateTime = new Date().toISOString();
-    return await setDoc(useEventDocRef(db, `${userId}/events/${eventType}`), eventData, {
+    return await setDoc(getEventDocRef(db, `${userId}/events/${eventType}`), eventData, {
         merge: true,
     });
 };
@@ -47,12 +46,12 @@ const deleteEvent = async (db: Firestore, userId: string, eventType: string) => 
     } */
 };
 
-export const onSnapshotUpdate = (
+export const onEventSnapshotUpdate = (
     db: Firestore,
     docPath: string,
-    snapshotUpdateHandler: Function,
+    snapshotUpdateHandler: SnapshotUpdateHandler,
 ) => {
-    const eventsDocRef = useEventDocRef(db, docPath);
+    const eventsDocRef = getEventDocRef(db, docPath);
     const unsubscribe = onSnapshot(eventsDocRef, (doc) => {
         snapshotUpdateHandler(doc);
     });
