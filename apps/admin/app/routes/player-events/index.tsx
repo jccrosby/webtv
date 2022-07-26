@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
-import { useFirestore, useEventsApi } from '@webtv/firebase';
+import { useFirestore, useEventsApi, useBookmarks } from '@webtv/firebase';
 import { firebaseConfig, defaultOktaId } from '@webtv/config';
 import CurrentTimeForm from '~/components/forms/current-time';
+import CommercialBreakForm from '~/components/forms/commercial-break';
+import InningBreakForm from '~/components/forms/inning-break';
 
 const StyledWrapper = styled.div`
     border: 1px solid #333333;
@@ -10,19 +12,19 @@ const StyledWrapper = styled.div`
 export default function Index() {
     console.log(defaultOktaId, firebaseConfig);
     const db = useFirestore(firebaseConfig);
+    const { addGameBookmark } = useBookmarks(db, defaultOktaId);
     const { sendEvent } = useEventsApi(db, defaultOktaId);
     return (
         <StyledWrapper>
-            Remote Control Events
             <h2>To do</h2>
             <ul>
-                <li>❌ Event: Current time</li>
-                <li>❌ Event: Commercial break:start</li>
-                <li>❌ Event: Commercial break:stop</li>
-                <li>❌ Event: Inning break:start</li>
-                <li>❌ Event: Inning break:stop</li>
+                <li>✅ Event: Current time</li>
+                <li>✅ Event: Commercial break: start &amp; stop</li>
+                <li>✅ Event: Inning break: start &amp; stop</li>
             </ul>
-            <CurrentTimeForm sendEvent={sendEvent} />
+            <CurrentTimeForm addGameBookmark={addGameBookmark} />
+            <CommercialBreakForm sendEvent={sendEvent} />
+            <InningBreakForm sendEvent={sendEvent} />
         </StyledWrapper>
     );
 }
