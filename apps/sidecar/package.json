@@ -22,7 +22,8 @@
         "@webtv/views": "libs/views/dist",
         "react": "18.1.0",
         "react-dom": "18.1.0",
-        "remix": "^1.0.6"
+        "remix": "^1.0.6",
+        "@webtv/config": "libs/config/dist"
     },
     "devDependencies": {
         "@remix-run/dev": "^1.0.6",

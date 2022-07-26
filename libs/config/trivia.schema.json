@@ -1,0 +1,22 @@
+{
+    "$id": "trivia.schema.json",
+    "title": "Trivia Schema v1",
+    "description": "Questions/Answers for Sidecar: Commercial break/Trivia view",
+    "type": "array",
+    "additionalProperties": true,
+    "properties": {
+        "triviaId": {
+            "type": "integer"
+        },
+        "question": {
+            "type": "string"
+        },
+        "options": {
+            "type": "array" 
+        },
+        "correctAnswer": {
+            "string": "string" 
+        } 
+    },
+    "required": ["triviaId", "question", "options", "correctAnswer"]
+}
