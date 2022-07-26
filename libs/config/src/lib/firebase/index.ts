@@ -1,6 +1,6 @@
 import { FirebaseConfig } from '@webtv/firebase';
 
-export const firebaseConfig: FirebaseConfig = {
+const mlbNpdConfig = {
     apiKey: 'AIzaSyA8BTdOnkDerFvgHt-2bRQrODChvqetSL4',
     authDomain: 'mlb-commons-sbx-950d.firebaseapp.com',
     databaseURL: 'https://mlb-commons-sbx-950d-default-rtdb.firebaseio.com',
@@ -10,7 +10,19 @@ export const firebaseConfig: FirebaseConfig = {
     appId: '1:987042097957:web:86cd5848cb407e1f0208cc',
 };
 
-export const defaultOktaId = '0oap7wa857jcvPlZ5355';
+const crosbyPublicConfig = {
+    apiKey: 'AIzaSyCTSuebVy69ZjC4vXhzxmVIGgU_DQBPXec',
+    authDomain: 'mlb-webtv-event-bus.firebaseapp.com',
+    projectId: 'mlb-webtv-event-bus',
+    storageBucket: 'mlb-webtv-event-bus.appspot.com',
+    messagingSenderId: '117655883629',
+    appId: '1:117655883629:web:17c363ffa4c5c0bcb9d464',
+    measurementId: 'G-48SWJCRYZH',
+};
+
+export const firebaseConfig: FirebaseConfig = mlbNpdConfig;
+
+export const defaultOktaId = '00u72ovoxWrd5FMSp356';
 
 export function config(): string {
     return 'config';

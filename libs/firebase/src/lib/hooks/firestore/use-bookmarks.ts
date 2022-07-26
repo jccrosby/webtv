@@ -82,23 +82,23 @@ const addGameBookmarkForUser = async (
     gamePk: string,
     contentBookmark: GameContentBookmark,
 ) => {
-    return await setDoc(doc(db, `bookmarks/games/${gamePk}`), contentBookmark, {
+    return await setDoc(doc(db, `bookmarks/${userId}/games/${gamePk}`), contentBookmark, {
         merge: true,
     });
 };
 
 const deleteGameBookmarkForUser = async (db: Firestore, userId: string, gamePk: string) => {
-    const docRef = doc(db, `bookmarks`);
+    const docRef = doc(db, `bookmarks/${userId}`);
     return await updateDoc(docRef, { [`games.${gamePk}`]: deleteField() });
 };
 
 const deleteVodBookmarkForUser = async (db: Firestore, userId: string, slug: string) => {
-    const docRef = doc(db, `bookmarks`);
+    const docRef = doc(db, `bookmarks/${userId}`);
     return await updateDoc(docRef, { [`vod.${slug}`]: deleteField() });
 };
 
 const deleteSvodBookmarkForUser = async (db: Firestore, userId: string, slug: string) => {
-    const docRef = doc(db, `bookmarks`);
+    const docRef = doc(db, `bookmarks/${userId}`);
     return await updateDoc(docRef, { [`svod.${slug}`]: deleteField() });
 };
 

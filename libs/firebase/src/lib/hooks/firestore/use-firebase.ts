@@ -4,11 +4,12 @@ import { getFirestore } from 'firebase/firestore';
 export interface FirebaseConfig {
     apiKey: string;
     authDomain: string;
-    databaseURL: string;
+    databaseURL?: string;
     projectId: string;
     storageBucket: string;
     messagingSenderId: string;
     appId: string;
+    measurementId?: string;
 }
 
 export type SnapshotUpdateHandler = (doc: any) => void;

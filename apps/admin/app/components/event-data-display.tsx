@@ -18,6 +18,7 @@ export const EventDataDisplay = () => {
     const [currentContentId, setCurrentContentId] = useState(
         'd15618cb-fcb9-4ece-8339-5370d66296ac',
     );
+    console.log('firebase config', firebaseConfig);
     const db = useFirestore(firebaseConfig);
     useEffect(() => {
         const subscriptions: Unsubscribe[] = [];
