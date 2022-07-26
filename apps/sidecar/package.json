@@ -23,7 +23,6 @@
         "react": "18.1.0",
         "react-dom": "18.1.0",
         "remix": "^1.0.6",
-        "@webtv/views": "libs/views/dist",
         "@webtv/config": "libs/config/dist"
     },
     "devDependencies": {

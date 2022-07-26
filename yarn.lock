@@ -4576,15 +4576,8 @@
 
 "@webtv/config@libs/config/dist":
   version "0.0.2"
-  resolved "https://artifacts.mlbinfra.net:443/artifactory/api/npm/web-npm/@webtv/config/-/@webtv/config-0.0.2.tgz#59281a97d4395d6c592edf06edd71e7888bad14b"
-  integrity sha1-WSgal9Q5XWxZLt8G7dceeIi60Us=
 
 "@webtv/firebase@libs/firebase/dist":
-  version "0.0.4"
-  resolved "https://artifacts.mlbinfra.net:443/artifactory/api/npm/web-npm/@webtv/firebase/-/@webtv/firebase-0.0.4.tgz#553da4c3ca1d3c1f63595423f55ac46654560302"
-  integrity sha1-VT2kw8odPB9jWVQj9VrEZlRWAwI=
-
-"@webtv/views@libs/views/dist":
   version "0.0.4"
 
 "@webtv/views@libs/views/dist":
