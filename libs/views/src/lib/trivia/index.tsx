@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ITriviaProps } from './types';
+import { ITriviaList } from './types';
 import {
     StyledTriviaContainer,
     StyledTriviaAnswerMulti,
@@ -7,7 +7,8 @@ import {
     StyledTriviaQ,
 } from './style';
 
-export const Trivia: FC<ITriviaProps> = ({}: ITriviaProps) => {
+export const Trivia: FC<ITriviaList> = ({ triviaData = [] }: ITriviaList) => {
+    console.log(triviaData);
     return (
         <StyledTriviaContainer>
             <h1>Trivia Time!</h1>

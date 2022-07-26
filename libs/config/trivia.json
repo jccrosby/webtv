@@ -1,0 +1,24 @@
+[
+    {
+      "triviaId": 1,
+      "question": "Who is the only player to steal a base in an All-Star Game?",
+      "options": [
+            "A: Pie Traynor",
+            "B: Darryl Strawberry",
+            "C: Rickey Henderson",
+            "D: Jose Reyes"
+        ],
+        "correctAnswer": "A: Pie Traynor"
+    }, {
+        "triviaId": 2,
+        "question": "How many beers did Wade Boggs drink in a single day with cross country flight?",
+        "options": [
+            "A: 28", 
+            "B: 45", 
+            "C: 70", 
+            "D: 107"
+        ],
+        "correctAnswer": "D: 107"
+      }
+  ]
+
