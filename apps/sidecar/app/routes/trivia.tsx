@@ -1,3 +1,9 @@
-export default function Trivia() {
-    return <div>hi</div>;
+import { Trivia } from '@webtv/views';
+
+export default function TriviaRoute() {
+    return (
+        <>
+            <Trivia></Trivia>
+        </>
+    );
 }
