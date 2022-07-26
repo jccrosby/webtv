@@ -11,10 +11,10 @@ export default function Index() {
             <h2>To do</h2>
             <ul>
                 <li>
-                    ❌ <a href="/player-events">Player Events</a>
+                    ✅ <a href="/player-events">Player Events</a>
                 </li>
                 <li>
-                    ❌ <a href="/remote-control">Remote Control Events</a>
+                    ✅ <a href="/remote-control">Remote Control Events</a>
                 </li>
             </ul>
         </StyledWrapper>

@@ -24,6 +24,7 @@
         "lodash.debounce": "^4.0.8",
         "react": "18.1.0",
         "react-dom": "18.1.0",
+        "react-json-view": "^1.21.3",
         "remix": "^1.0.6"
     },
     "devDependencies": {

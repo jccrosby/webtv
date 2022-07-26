@@ -11,6 +11,8 @@ export interface FirebaseConfig {
     appId: string;
 }
 
+export type SnapshotUpdateHandler = (doc: any) => void;
+
 export const useFirebaseApp = (config: FirebaseConfig) => {
     return initializeApp(config);
 };

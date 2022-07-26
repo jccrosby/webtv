@@ -5,6 +5,7 @@ import { StylesPlaceholder } from '@mantine/remix';
 
 import { theme } from './theme';
 import Navigation from './components/navigation';
+import EventDataDisplay from './components/event-data-display';
 export const meta: MetaFunction = () => ({
     charset: 'utf-8',
     title: 'Web.TV Admin App',
@@ -22,6 +23,7 @@ export default function App() {
                 <body>
                     <Navigation />
                     <Outlet />
+                    <EventDataDisplay />
                     <ScrollRestoration />
                     <Scripts />
                     <LiveReload />

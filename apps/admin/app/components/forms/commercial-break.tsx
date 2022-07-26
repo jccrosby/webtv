@@ -10,7 +10,7 @@ const CommercialBreakForm: FC<CommercialBreakFormProps> = ({ sendEvent }) => {
     const [isStart, setIsStart] = useState(true);
     return (
         <StyledForm>
-            <h1>Commercial Break</h1>
+            <h3>Commercial Break</h3>
             <StyledLabel>
                 Start:
                 <input

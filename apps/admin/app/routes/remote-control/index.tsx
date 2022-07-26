@@ -43,8 +43,6 @@ export default function Index() {
 
     return (
         <StyledWrapper>
-            Remote Control Events
-            <h2>To do</h2>
             <ul>
                 <li>✅ Event: Player remote: pause/pause</li>
                 <li>✅ Event: Player remote: mute/unmute</li>

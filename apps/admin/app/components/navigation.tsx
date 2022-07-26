@@ -35,10 +35,10 @@ export default function Navigation() {
                     <StyledAnchor href="/">Home</StyledAnchor>
                 </StyledLi>
                 <StyledLi>
-                    <StyledAnchor href="/player-events">Player Events</StyledAnchor>
+                    <StyledAnchor href="/playback-events">Playback Events</StyledAnchor>
                 </StyledLi>
                 <StyledLi>
-                    <StyledAnchor href="/remote-control">Remote Events</StyledAnchor>
+                    <StyledAnchor href="/remote-control">Remote Control Events</StyledAnchor>
                 </StyledLi>
             </StyledUl>
         </StyledWrapper>

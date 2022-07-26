@@ -10,13 +10,11 @@ const StyledWrapper = styled.div`
 `;
 
 export default function Index() {
-    console.log(defaultOktaId, firebaseConfig);
     const db = useFirestore(firebaseConfig);
     const { addGameBookmark } = useBookmarks(db, defaultOktaId);
     const { sendEvent } = useEventsApi(db, defaultOktaId);
     return (
         <StyledWrapper>
-            <h2>To do</h2>
             <ul>
                 <li>✅ Event: Current time</li>
                 <li>✅ Event: Commercial break: start &amp; stop</li>
