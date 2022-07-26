@@ -4562,6 +4562,12 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
+"@webtv/config@libs/config/dist":
+  version "0.0.1"
+
+"@webtv/firebase@libs/firebase/dist":
+  version "0.0.1"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://artifacts.mlbinfra.net:443/artifactory/api/npm/web-npm/@xtuc/ieee754/-/ieee754-1.2.0.tgz"

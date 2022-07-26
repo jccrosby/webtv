@@ -1,3 +1,3 @@
 export function config(): string {
-  return 'config';
+    return 'config';
 }

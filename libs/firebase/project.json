@@ -2,23 +2,17 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/firebase/src",
     "projectType": "library",
-    "tags": [
-        "scope:core"
-    ],
+    "tags": ["scope:core"],
     "targets": {
         "build": {
             "executor": "@nrwl/web:rollup",
-            "outputs": [
-                "{options.outputPath}"
-            ],
+            "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/libs/firebase",
+                "outputPath": "libs/firebase/dist",
                 "tsConfig": "libs/firebase/tsconfig.lib.json",
                 "project": "libs/firebase/package.json",
                 "entryFile": "libs/firebase/src/index.ts",
-                "external": [
-                    "react/jsx-runtime"
-                ],
+                "external": ["react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
                 "compiler": "babel",
                 "assets": [
@@ -27,25 +21,20 @@
                         "input": ".",
                         "output": "."
                     }
-                ]
+                ],
+                "format": ["cjs"]
             }
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",
-            "outputs": [
-                "{options.outputFile}"
-            ],
+            "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": [
-                    "libs/firebase/**/*.{ts,tsx,js,jsx}"
-                ]
+                "lintFilePatterns": ["libs/firebase/**/*.{ts,tsx,js,jsx}"]
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": [
-                "coverage/libs/firebase"
-            ],
+            "outputs": ["coverage/libs/firebase"],
             "options": {
                 "jestConfig": "libs/firebase/jest.config.ts",
                 "passWithNoTests": true

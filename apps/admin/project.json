@@ -2,7 +2,5 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "apps/admin",
     "projectType": "application",
-    "tags": [
-        "scope:ui"
-    ]
+    "tags": ["scope:ui"]
 }

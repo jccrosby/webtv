@@ -7,15 +7,11 @@ const StyledWrapper = styled.div`
 export default function Index() {
     return (
         <StyledWrapper>
-            Admin app
+            Remote Control Events
             <h2>To do</h2>
             <ul>
-                <li>
-                    ❌ <a href="/player-events">Player Events</a>
-                </li>
-                <li>
-                    ❌ <a href="/remote-control">Remote Control Events</a>
-                </li>
+                <li>❌ Event: Player remote: pause</li>
+                <li>❌ Event: Player remote: play</li>
             </ul>
         </StyledWrapper>
     );

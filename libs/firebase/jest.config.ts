@@ -1,10 +1,10 @@
 /* eslint-disable */
 export default {
-  displayName: 'firebase',
-  preset: '../../jest.preset.js',
-  transform: {
-    '^.+\\.[tj]sx?$': 'babel-jest',
-  },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/firebase',
+    displayName: 'firebase',
+    preset: '../../jest.preset.js',
+    transform: {
+        '^.+\\.[tj]sx?$': 'babel-jest',
+    },
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+    coverageDirectory: '../../coverage/libs/firebase',
 };

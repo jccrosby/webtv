@@ -1,5 +1,6 @@
 {
-  "name": "@webtv/trivia",
-  "version": "0.0.1",
-  "type": "commonjs"
+    "name": "@webtv/config",
+    "version": "0.0.1",
+    "main": "./dist/index.cjs.js",
+    "typings": "./dist/index.d.ts"
 }

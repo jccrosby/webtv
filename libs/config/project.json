@@ -2,56 +2,43 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/config/src",
     "projectType": "library",
+    "tags": ["scope:core"],
     "targets": {
         "build": {
-            "executor": "@nrwl/js:tsc",
-            "outputs": [
-                "{options.outputPath}"
-            ],
+            "executor": "@nrwl/web:rollup",
+            "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/libs/config",
-                "main": "libs/config/src/index.ts",
+                "outputPath": "libs/config/dist",
                 "tsConfig": "libs/config/tsconfig.lib.json",
+                "project": "libs/config/package.json",
+                "entryFile": "libs/config/src/index.ts",
+                "external": ["react/jsx-runtime"],
+                "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+                "compiler": "babel",
                 "assets": [
-                    "libs/config/*.md"
-                ]
+                    {
+                        "glob": "libs/config/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ],
+                "format": ["cjs"]
             }
-        },
-        "publish": {
-            "executor": "@nrwl/workspace:run-commands",
-            "options": {
-                "command": "node tools/scripts/publish.mjs config {args.ver} {args.tag}"
-            },
-            "dependsOn": [
-                {
-                    "projects": "self",
-                    "target": "build"
-                }
-            ]
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",
-            "outputs": [
-                "{options.outputFile}"
-            ],
+            "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": [
-                    "libs/config/**/*.ts"
-                ]
+                "lintFilePatterns": ["libs/config/**/*.{ts,tsx,js,jsx}"]
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": [
-                "coverage/libs/config"
-            ],
+            "outputs": ["coverage/libs/config"],
             "options": {
                 "jestConfig": "libs/config/jest.config.ts",
                 "passWithNoTests": true
             }
         }
-    },
-    "tags": [
-        "scope:core"
-    ]
+    }
 }

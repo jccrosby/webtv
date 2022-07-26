@@ -5,41 +5,29 @@
     "targets": {
         "build": {
             "executor": "@nrwl/js:tsc",
-            "outputs": [
-                "{options.outputPath}"
-            ],
+            "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/libs/views",
+                "outputPath": "libs/views/dist",
                 "main": "libs/views/src/index.ts",
                 "tsConfig": "libs/views/tsconfig.lib.json",
-                "assets": [
-                    "libs/views/*.md"
-                ]
+                "assets": ["libs/views/*.md"]
             }
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",
-            "outputs": [
-                "{options.outputFile}"
-            ],
+            "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": [
-                    "libs/views/**/*.ts"
-                ]
+                "lintFilePatterns": ["libs/views/**/*.ts"]
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": [
-                "coverage/libs/views"
-            ],
+            "outputs": ["coverage/libs/views"],
             "options": {
                 "jestConfig": "libs/views/jest.config.ts",
                 "passWithNoTests": true
             }
         }
     },
-    "tags": [
-        "scope:ui"
-    ]
+    "tags": ["scope:ui"]
 }

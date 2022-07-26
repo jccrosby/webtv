@@ -3,12 +3,14 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
+        "build": "nx run-many --target=build --all",
         "dev:admin": "nx dev admin",
         "dev:sidecar": "nx dev sidecar",
+        "postinstall": "remix setup node",
+        "affected:build": "nx affected:build",
+        "affected:test": "nx affected:test",
         "start": "nx serve",
-        "build": "nx build",
-        "test": "nx test",
-        "postinstall": "remix setup node"
+        "test": "nx run-many --target=test --all"
     },
     "private": true,
     "dependencies": {
