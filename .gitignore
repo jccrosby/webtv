@@ -32,6 +32,7 @@ node_modules
 npm-debug.log
 yarn-error.log
 testem.log
+*.log
 /typings
 
 # System Files
@@ -41,4 +42,3 @@ Thumbs.db
 # Remix files
 apps/**/build
 apps/**/.cache
-  
