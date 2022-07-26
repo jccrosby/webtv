@@ -1,6 +1,11 @@
 {
     "name": "@webtv/config",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "./dist/index.cjs.js",
-    "typings": "./dist/index.d.ts"
+    "typings": "./dist/index.d.ts",
+    "files": [
+        "README.md",
+        "packager.json",
+        "./dist/**"
+    ]
 }
