@@ -1,15 +1,10 @@
 /* eslint-disable */
 export default {
-  displayName: 'views',
-  preset: '../../jest.preset.js',
-  globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
+    displayName: 'views',
+    preset: '../../jest.preset.js',
+    transform: {
+        '^.+\\.[tj]sx?$': 'babel-jest',
     },
-  },
-  transform: {
-    '^.+\\.[tj]s$': 'ts-jest',
-  },
-  moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/libs/views',
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+    coverageDirectory: '../../coverage/libs/views',
 };

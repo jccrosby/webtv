@@ -1,3 +1,3 @@
 export function views(): string {
-  return 'views';
+    return 'views';
 }

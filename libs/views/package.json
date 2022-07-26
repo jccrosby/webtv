@@ -1,5 +1,6 @@
 {
     "name": "@webtv/views",
     "version": "0.0.3",
-    "type": "commonjs"
+    "main": "./dist/index.cjs.js",
+    "typings": "./dist/index.d.ts"
 }

@@ -2,22 +2,34 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/views/src",
     "projectType": "library",
+    "tags": ["scope:ui"],
     "targets": {
         "build": {
-            "executor": "@nrwl/js:tsc",
+            "executor": "@nrwl/web:rollup",
             "outputs": ["{options.outputPath}"],
             "options": {
                 "outputPath": "libs/views/dist",
-                "main": "libs/views/src/index.ts",
                 "tsConfig": "libs/views/tsconfig.lib.json",
-                "assets": ["libs/views/*.md"]
+                "project": "libs/views/package.json",
+                "entryFile": "libs/views/src/index.ts",
+                "external": ["react/jsx-runtime"],
+                "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+                "compiler": "babel",
+                "assets": [
+                    {
+                        "glob": "libs/views/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ],
+                "format": ["cjs"]
             }
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": ["libs/views/**/*.ts"]
+                "lintFilePatterns": ["libs/views/**/*.{ts,tsx,js,jsx}"]
             }
         },
         "test": {
@@ -28,6 +40,5 @@
                 "passWithNoTests": true
             }
         }
-    },
-    "tags": ["scope:ui"]
+    }
 }
